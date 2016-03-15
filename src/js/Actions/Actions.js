@@ -1,10 +1,10 @@
-import {GridComputer, GetWinner, IsFull} from '../Services/GridComputer';
+import { GridComputer, GetWinner, IsFull } from '../Services/GridComputer';
 import Constants from '../Constants';
 
 export const MAKE_MOVE = 'MAKE_MOVE';
 export const NEW_GAME = 'NEW_GAME';
 
-function calculateOutcome(grid) {
+function calculateOutcome (grid) {
 	let currentWinner = GetWinner(grid);
 
 	if (currentWinner !== Constants.PLAYER._) {
@@ -18,7 +18,7 @@ function calculateOutcome(grid) {
 	return Constants.STATE.ONGOING;
 };
 
-export function makeMove(index) {
+export function makeMove (index) {
   	return (dispatch, getState) => {
     	let grid = getState().get('grid'),
     		outcome;
@@ -38,7 +38,7 @@ export function makeMove(index) {
 		  	});
 		}
 
-		let {bestChoise} = new GridComputer(grid, Constants.PLAYER.X);
+		let { bestChoise } = new GridComputer(grid, Constants.PLAYER.X);
 		grid = grid.set(bestChoise, Constants.PLAYER.X);
 
 		outcome = calculateOutcome(grid);
@@ -51,7 +51,7 @@ export function makeMove(index) {
 };
 
 
-export function newGame() {
+export function newGame () {
 	return {
 		type: NEW_GAME
 	};

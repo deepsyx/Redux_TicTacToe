@@ -6,28 +6,34 @@ import Box from './Box';
 import Result from './Result';
 
 class TicTacToe extends React.Component {
-	_handleSelectBox(index) {
+	_handleSelectBox (index) {
 		this.props.makeMove(index);
 	}
 
-	_handleRestart() {
+	_handleRestart () {
 		this.props.newGame();
 	}
 
-	shouldComponentUpdate(nextProps) {
+	shouldComponentUpdate (nextProps) {
 		return this.props.grid !== nextProps.grid;
 	}
 
 	render() {
-		return <div className="box-wrapper">
-			<Result outcome={this.props.outcome} onRestart={this._handleRestart.bind(this)} />
-			<div className="box-container animated fadeIn">
-				{this.props.grid.map((box, i) => {
-					return <Box key={i} value={box} onSelectBox={this._handleSelectBox.bind(this, i)} />;
-				})}
+		let gridContainer = this.props.grid.map((box, i) => {
+			return <Box key={i} value={box} onSelectBox={this._handleSelectBox.bind(this, i)} />;
+		});
+
+		return (
+			<div className="box-wrapper">
+				<Result outcome={this.props.outcome} onRestart={this._handleRestart.bind(this)} />
+				<div className="box-container animated fadeIn">
+					{gridContainer}
+				</div>
+				<div className="footer">
+					Viktor Kirilov (github/deepsyx)
+				</div>
 			</div>
-			<div className="footer">Viktor Kirilov (github/deepsyx)</div>
-		</div>;
+		);
 	}
 };
 

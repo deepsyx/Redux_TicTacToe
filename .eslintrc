@@ -1,0 +1,39 @@
+{
+	"parser": "babel-eslint",
+	"env": {
+		"commonjs": true,
+		"browser": true,
+		"node": true,
+	},
+	"globals": {
+		"Raven": true,
+		"ga": true,
+		"mixpanel": true,
+		"Intercom": true,
+	},
+	"rules": {
+		"indent": [2, "tab"],
+		"no-console": 2,
+		"comma-dangle": 0,
+		"quote-props": 0,
+		"prefer-spread": 0,
+		"prefer-reflect": 0,
+		"consistent-this": [2, "_this"],
+		"new-cap": 0,
+		"radix": 0,
+		"camelcase": 0,
+		"react/jsx-boolean-value": [2, "always"],
+		"no-loop-func": 0,
+		"block-scoped-var": 0,
+		"react/prop-types": [2, {ignore: ["children"]}]
+	},
+	"plugins": [
+		"react"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+  	"extends": ["react"]
+}

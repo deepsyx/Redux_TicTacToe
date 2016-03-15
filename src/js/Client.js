@@ -9,6 +9,11 @@ import TicTacToeReducer from './Reducers/TicTacToeReducer';
 
 let store = createStore(TicTacToeReducer, applyMiddleware(thunk));
 
-ReactDOM.render(<Provider store={store}>
-	<App />
-</Provider>, document.getElementById('content'));
+ReactDOM.render(
+	(
+		<Provider store={store}>
+			<App />
+		</Provider>
+	),
+	document.getElementById('content')
+);
