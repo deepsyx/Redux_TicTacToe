@@ -25694,8 +25694,8 @@ var Box = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var boxSymbol = _react2.default.createElement('i', null),
-			    boxClass = 'empty-box';
+			var boxSymbol = _react2.default.createElement('i', null);
+			var boxClass = 'empty-box';
 
 			if (this.props.value === _Constants2.default.PLAYER.X) {
 				boxSymbol = _react2.default.createElement('i', { className: 'fa fa-times' });

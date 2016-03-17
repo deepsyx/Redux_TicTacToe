@@ -11,8 +11,8 @@ class Box extends React.Component {
 	}
 
 	render () {
-		let boxSymbol = <i />,
-			boxClass = 'empty-box';
+		let boxSymbol = <i />;
+		let	boxClass = 'empty-box';
 
 		if (this.props.value === Constants.PLAYER.X) {
 			boxSymbol = (<i className="fa fa-times"></i>);
