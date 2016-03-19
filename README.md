@@ -9,7 +9,7 @@ More information about Minimax algorithm [here][minimax_wiki]. You can see my im
 
 # Demo
 
-https://github.com/deepsyx/Redux_TicTacToe
+http://deepsyx.github.io/Redux_TicTacToe/
 
 # Installing
 
